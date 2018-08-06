@@ -1,0 +1,5 @@
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Common\bin\Debug\InterviewAcer.Common.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Common\bin\Debug\InterviewAcer.Common.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Common\obj\Debug\InterviewAcer.Common.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Common\obj\Debug\InterviewAcer.Common.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Common\obj\Debug\InterviewAcer.Common.csprojResolveAssemblyReference.cache

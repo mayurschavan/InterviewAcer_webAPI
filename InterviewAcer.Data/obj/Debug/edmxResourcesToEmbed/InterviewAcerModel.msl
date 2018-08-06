@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InterviewAcerModelStoreContainer" CdmEntityContainer="InterviewAcerDbContext">
+    <EntitySetMapping Name="InterviewDetails">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewDetail">
+        <MappingFragment StoreEntitySet="InterviewDetails">
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+          <ScalarProperty Name="InterviewDetailId" ColumnName="InterviewDetailId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="InterviewDate" ColumnName="InterviewDate" />
+          <ScalarProperty Name="InterviewTypeId" ColumnName="InterviewTypeId" />
+          <ScalarProperty Name="HiringIndividualName" ColumnName="HiringIndividualName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewTypes">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewType">
+        <MappingFragment StoreEntitySet="InterviewTypes">
+          <ScalarProperty Name="InterviewTypeId" ColumnName="InterviewTypeId" />
+          <ScalarProperty Name="InterviewTypeName" ColumnName="InterviewTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForgotPasswords">
+      <EntityTypeMapping TypeName="InterviewAcerModel.ForgotPassword">
+        <MappingFragment StoreEntitySet="ForgotPassword">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupCheckLists">
+      <EntityTypeMapping TypeName="InterviewAcerModel.GroupCheckList">
+        <MappingFragment StoreEntitySet="GroupCheckList">
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StageGroups">
+      <EntityTypeMapping TypeName="InterviewAcerModel.StageGroup">
+        <MappingFragment StoreEntitySet="StageGroups">
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="StageId" ColumnName="StageId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stages">
+      <EntityTypeMapping TypeName="InterviewAcerModel.Stage">
+        <MappingFragment StoreEntitySet="Stages">
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="StageName" ColumnName="StageName" />
+          <ScalarProperty Name="InterviewTypeId" ColumnName="InterviewTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetInterviewStage" FunctionName="InterviewAcerModel.Store.GetInterviewStage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterviewAcerModel.GetInterviewStage_Result">
+          <ScalarProperty Name="StageName" ColumnName="StageName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="InterviewCheckListMappings">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCheckListMapping">
+        <MappingFragment StoreEntitySet="InterviewCheckListMapping">
+          <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_GetUserTotalScore" FunctionName="InterviewAcerModel.Store.usp_GetUserTotalScore" />
+    <EntitySetMapping Name="InterviewCompletedStageMappings">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCompletedStageMapping">
+        <MappingFragment StoreEntitySet="InterviewCompletedStageMapping">
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="StageId" ColumnName="StageId" />
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_UpdateCheckList" FunctionName="InterviewAcerModel.Store.usp_UpdateCheckList" />
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="InterviewAcerModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="InterviewAcerModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="InterviewAcerModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="InterviewAcerModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="InterviewAcerModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="AcadamicScore" ColumnName="AcadamicScore" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="LicenseKey" ColumnName="LicenseKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="InterviewAcerModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

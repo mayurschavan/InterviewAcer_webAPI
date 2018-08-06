@@ -1,0 +1,10 @@
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\InterviewAcer.Data.dll.config
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\InterviewAcer.Data.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\InterviewAcer.Data.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\EntityFramework.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\EntityFramework.SqlServer.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\EntityFramework.xml
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\bin\Release\EntityFramework.SqlServer.xml
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\obj\Release\InterviewAcer.Data.csprojResolveAssemblyReference.cache
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\obj\Release\InterviewAcer.Data.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Data\obj\Release\InterviewAcer.Data.pdb

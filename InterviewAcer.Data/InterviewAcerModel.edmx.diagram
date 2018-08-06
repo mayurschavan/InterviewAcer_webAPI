@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b618d28159e54b7d82408f78590264a6" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="InterviewAcerModel.InterviewDetail" Width="1.5" PointX="2.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterviewAcerModel.InterviewType" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="InterviewAcerModel.FK_InterviewDetails_InterviewTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="InterviewAcerModel.ForgotPassword" Width="1.5" PointX="6.5" PointY="1.625" />
+        <EntityTypeShape EntityType="InterviewAcerModel.GroupCheckList" Width="1.5" PointX="7.5" PointY="5.125" />
+        <EntityTypeShape EntityType="InterviewAcerModel.StageGroup" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="InterviewAcerModel.Stage" Width="1.5" PointX="3" PointY="5.125" />
+        <AssociationConnector Association="InterviewAcerModel.FK_GroupCheckList_StageGroups" />
+        <AssociationConnector Association="InterviewAcerModel.FK_Stages_InterviewTypes" />
+        <AssociationConnector Association="InterviewAcerModel.FK_StageGroups_Stages" />
+        <AssociationConnector Association="InterviewAcerModel.InterviewCheckListMapping" />
+        <EntityTypeShape EntityType="InterviewAcerModel.InterviewCheckListMapping" Width="1.5" PointX="12.25" PointY="3.25" />
+        <AssociationConnector Association="InterviewAcerModel.FK_InterviewCheckListMapping_GroupCheckList" />
+        <AssociationConnector Association="InterviewAcerModel.FK_InterviewCheckListMapping_InterviewDetails" />
+        <EntityTypeShape EntityType="InterviewAcerModel.InterviewCompletedStageMapping" Width="1.5" PointX="9.25" PointY="0.75" />
+        <AssociationConnector Association="InterviewAcerModel.FK_InterviewCompletedStageMapping_InterviewDetails" />
+        <AssociationConnector Association="InterviewAcerModel.FK_InterviewCompletedStageMapping_Stages" />
+        <EntityTypeShape EntityType="InterviewAcerModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="InterviewAcerModel.AspNetRole" Width="1.5" PointX="7.75" PointY="10.875" />
+        <EntityTypeShape EntityType="InterviewAcerModel.AspNetUserClaim" Width="1.5" PointX="12.25" PointY="12" />
+        <EntityTypeShape EntityType="InterviewAcerModel.AspNetUserLogin" Width="1.5" PointX="12.25" PointY="9.5" />
+        <EntityTypeShape EntityType="InterviewAcerModel.AspNetUser" Width="1.5" PointX="10" PointY="9.125" />
+        <AssociationConnector Association="InterviewAcerModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="InterviewAcerModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="InterviewAcerModel.AspNetUserRoles" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

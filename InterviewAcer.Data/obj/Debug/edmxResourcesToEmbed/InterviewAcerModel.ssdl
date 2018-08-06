@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewAcerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="LicenseKey" Type="nvarchar(max)" />
+    <Property Name="UniversityName" Type="nvarchar(max)" />
+    <Property Name="CountryCode" Type="nvarchar(max)" />
+    <Property Name="Specialization" Type="nvarchar(max)" />
+    <Property Name="AcadamicScore" Type="nvarchar(max)" />
+    <Property Name="ProfilePicture" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForgotPassword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="OTP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupCheckList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InterviewCheckListMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterviewId" Type="int" Nullable="false" />
+    <Property Name="CheckListId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InterviewCompletedStageMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterviewId" Type="int" Nullable="false" />
+    <Property Name="StageId" Type="int" Nullable="false" />
+    <Property Name="FeedBack" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="InterviewDetails">
+    <Key>
+      <PropertyRef Name="InterviewDetailId" />
+    </Key>
+    <Property Name="InterviewDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InterviewDate" Type="date" Nullable="false" />
+    <Property Name="InterviewTypeId" Type="int" Nullable="false" />
+    <Property Name="HiringIndividualName" Type="nvarchar(max)" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ColorCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="InterviewTypes">
+    <Key>
+      <PropertyRef Name="InterviewTypeId" />
+    </Key>
+    <Property Name="InterviewTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterviewTypeName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StageGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StageId" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterviewTypeId" Type="int" Nullable="false" />
+    <Property Name="StageName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupCheckList_StageGroups">
+    <End Role="StageGroups" Type="Self.StageGroups" Multiplicity="1" />
+    <End Role="GroupCheckList" Type="Self.GroupCheckList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageGroups">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupCheckList">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewCheckListMapping_GroupCheckList">
+    <End Role="GroupCheckList" Type="Self.GroupCheckList" Multiplicity="1" />
+    <End Role="InterviewCheckListMapping" Type="Self.InterviewCheckListMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupCheckList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InterviewCheckListMapping">
+        <PropertyRef Name="CheckListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewCheckListMapping_InterviewDetails">
+    <End Role="InterviewDetails" Type="Self.InterviewDetails" Multiplicity="1" />
+    <End Role="InterviewCheckListMapping" Type="Self.InterviewCheckListMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewDetails">
+        <PropertyRef Name="InterviewDetailId" />
+      </Principal>
+      <Dependent Role="InterviewCheckListMapping">
+        <PropertyRef Name="InterviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewCompletedStageMapping_InterviewDetails">
+    <End Role="InterviewDetails" Type="Self.InterviewDetails" Multiplicity="1" />
+    <End Role="InterviewCompletedStageMapping" Type="Self.InterviewCompletedStageMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewDetails">
+        <PropertyRef Name="InterviewDetailId" />
+      </Principal>
+      <Dependent Role="InterviewCompletedStageMapping">
+        <PropertyRef Name="InterviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewCompletedStageMapping_Stages">
+    <End Role="Stages" Type="Self.Stages" Multiplicity="1" />
+    <End Role="InterviewCompletedStageMapping" Type="Self.InterviewCompletedStageMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InterviewCompletedStageMapping">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewDetails_InterviewTypes">
+    <End Role="InterviewTypes" Type="Self.InterviewTypes" Multiplicity="1" />
+    <End Role="InterviewDetails" Type="Self.InterviewDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewTypes">
+        <PropertyRef Name="InterviewTypeId" />
+      </Principal>
+      <Dependent Role="InterviewDetails">
+        <PropertyRef Name="InterviewTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageGroups_Stages">
+    <End Role="Stages" Type="Self.Stages" Multiplicity="1" />
+    <End Role="StageGroups" Type="Self.StageGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageGroups">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stages_InterviewTypes">
+    <End Role="InterviewTypes" Type="Self.InterviewTypes" Multiplicity="1" />
+    <End Role="Stages" Type="Self.Stages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewTypes">
+        <PropertyRef Name="InterviewTypeId" />
+      </Principal>
+      <Dependent Role="Stages">
+        <PropertyRef Name="InterviewTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetInterviewStage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InterviewId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_GetUserTotalScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="usp_UpdateCheckList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="checklistId" Type="int" Mode="In" />
+    <Parameter Name="interviewId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="InterviewAcerModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForgotPassword" EntityType="Self.ForgotPassword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupCheckList" EntityType="Self.GroupCheckList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterviewCheckListMapping" EntityType="Self.InterviewCheckListMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterviewCompletedStageMapping" EntityType="Self.InterviewCompletedStageMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterviewDetails" EntityType="Self.InterviewDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterviewTypes" EntityType="Self.InterviewTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StageGroups" EntityType="Self.StageGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stages" EntityType="Self.Stages" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupCheckList_StageGroups" Association="Self.FK_GroupCheckList_StageGroups">
+      <End Role="StageGroups" EntitySet="StageGroups" />
+      <End Role="GroupCheckList" EntitySet="GroupCheckList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewCheckListMapping_GroupCheckList" Association="Self.FK_InterviewCheckListMapping_GroupCheckList">
+      <End Role="GroupCheckList" EntitySet="GroupCheckList" />
+      <End Role="InterviewCheckListMapping" EntitySet="InterviewCheckListMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewCheckListMapping_InterviewDetails" Association="Self.FK_InterviewCheckListMapping_InterviewDetails">
+      <End Role="InterviewDetails" EntitySet="InterviewDetails" />
+      <End Role="InterviewCheckListMapping" EntitySet="InterviewCheckListMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewCompletedStageMapping_InterviewDetails" Association="Self.FK_InterviewCompletedStageMapping_InterviewDetails">
+      <End Role="InterviewDetails" EntitySet="InterviewDetails" />
+      <End Role="InterviewCompletedStageMapping" EntitySet="InterviewCompletedStageMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewCompletedStageMapping_Stages" Association="Self.FK_InterviewCompletedStageMapping_Stages">
+      <End Role="Stages" EntitySet="Stages" />
+      <End Role="InterviewCompletedStageMapping" EntitySet="InterviewCompletedStageMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewDetails_InterviewTypes" Association="Self.FK_InterviewDetails_InterviewTypes">
+      <End Role="InterviewTypes" EntitySet="InterviewTypes" />
+      <End Role="InterviewDetails" EntitySet="InterviewDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageGroups_Stages" Association="Self.FK_StageGroups_Stages">
+      <End Role="Stages" EntitySet="Stages" />
+      <End Role="StageGroups" EntitySet="StageGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stages_InterviewTypes" Association="Self.FK_Stages_InterviewTypes">
+      <End Role="InterviewTypes" EntitySet="InterviewTypes" />
+      <End Role="Stages" EntitySet="Stages" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

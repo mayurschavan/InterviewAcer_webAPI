@@ -1,0 +1,14 @@
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Repository.dll.config
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Repository.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Repository.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\EntityFramework.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\EntityFramework.SqlServer.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Common.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Data.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Common.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\InterviewAcer.Data.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\EntityFramework.xml
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Release\EntityFramework.SqlServer.xml
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Release\InterviewAcer.Repository.csprojResolveAssemblyReference.cache
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Release\InterviewAcer.Repository.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Release\InterviewAcer.Repository.pdb

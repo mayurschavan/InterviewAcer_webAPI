@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewAcerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="InterviewDetail">
+    <Key>
+      <PropertyRef Name="InterviewDetailId" />
+    </Key>
+    <Property Name="InterviewDetailId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InterviewDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InterviewTypeId" Type="Int32" Nullable="false" />
+    <Property Name="HiringIndividualName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InterviewType" Relationship="Self.FK_InterviewDetails_InterviewTypes" FromRole="InterviewDetails" ToRole="InterviewTypes" />
+    <Property Name="ColorCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InterviewCheckListMappings" Relationship="InterviewAcerModel.FK_InterviewCheckListMapping_InterviewDetails" FromRole="InterviewDetail" ToRole="InterviewCheckListMapping" />
+  </EntityType>
+  <EntityType Name="InterviewType">
+    <Key>
+      <PropertyRef Name="InterviewTypeId" />
+    </Key>
+    <Property Name="InterviewTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InterviewDetails" Relationship="Self.FK_InterviewDetails_InterviewTypes" FromRole="InterviewTypes" ToRole="InterviewDetails" />
+    <NavigationProperty Name="Stages" Relationship="InterviewAcerModel.FK_Stages_InterviewTypes" FromRole="InterviewType" ToRole="Stage" />
+  </EntityType>
+  <Association Name="FK_InterviewDetails_InterviewTypes">
+    <End Role="InterviewTypes" Type="Self.InterviewType" Multiplicity="1" />
+    <End Role="InterviewDetails" Type="Self.InterviewDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewTypes">
+        <PropertyRef Name="InterviewTypeId" />
+      </Principal>
+      <Dependent Role="InterviewDetails">
+        <PropertyRef Name="InterviewTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InterviewAcerDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InterviewDetails" EntityType="Self.InterviewDetail" />
+    <EntitySet Name="InterviewTypes" EntityType="Self.InterviewType" />
+    <AssociationSet Name="FK_InterviewDetails_InterviewTypes" Association="Self.FK_InterviewDetails_InterviewTypes">
+      <End Role="InterviewTypes" EntitySet="InterviewTypes" />
+      <End Role="InterviewDetails" EntitySet="InterviewDetails" />
+    </AssociationSet>
+    <EntitySet Name="ForgotPasswords" EntityType="InterviewAcerModel.ForgotPassword" />
+    <EntitySet Name="GroupCheckLists" EntityType="InterviewAcerModel.GroupCheckList" />
+    <EntitySet Name="StageGroups" EntityType="InterviewAcerModel.StageGroup" />
+    <EntitySet Name="Stages" EntityType="InterviewAcerModel.Stage" />
+    <AssociationSet Name="FK_GroupCheckList_StageGroups" Association="InterviewAcerModel.FK_GroupCheckList_StageGroups">
+      <End Role="StageGroup" EntitySet="StageGroups" />
+      <End Role="GroupCheckList" EntitySet="GroupCheckLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stages_InterviewTypes" Association="InterviewAcerModel.FK_Stages_InterviewTypes">
+      <End Role="InterviewType" EntitySet="InterviewTypes" />
+      <End Role="Stage" EntitySet="Stages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StageGroups_Stages" Association="InterviewAcerModel.FK_StageGroups_Stages">
+      <End Role="Stage" EntitySet="Stages" />
+      <End Role="StageGroup" EntitySet="StageGroups" />
+    </AssociationSet>
+    <FunctionImport Name="GetInterviewStage" ReturnType="Collection(InterviewAcerModel.GetInterviewStage_Result)">
+      <Parameter Name="InterviewId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="InterviewCheckListMappings" EntityType="InterviewAcerModel.InterviewCheckListMapping" />
+    <AssociationSet Name="FK_InterviewCheckListMapping_GroupCheckList" Association="InterviewAcerModel.FK_InterviewCheckListMapping_GroupCheckList">
+      <End Role="GroupCheckList" EntitySet="GroupCheckLists" />
+      <End Role="InterviewCheckListMapping" EntitySet="InterviewCheckListMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewCheckListMapping_InterviewDetails" Association="InterviewAcerModel.FK_InterviewCheckListMapping_InterviewDetails">
+      <End Role="InterviewDetail" EntitySet="InterviewDetails" />
+      <End Role="InterviewCheckListMapping" EntitySet="InterviewCheckListMappings" />
+    </AssociationSet>
+    <FunctionImport Name="usp_GetCompletedStages" ReturnType="Collection(InterviewAcerModel.usp_GetCompletedStages_Result)">
+      <Parameter Name="interviewId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_GetUserTotalScore" ReturnType="Collection(Int32)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="ForgotPassword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="OTP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="GroupCheckList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Points" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="StageGroup" Relationship="InterviewAcerModel.FK_GroupCheckList_StageGroups" FromRole="GroupCheckList" ToRole="StageGroup" />
+    <NavigationProperty Name="InterviewCheckListMappings" Relationship="InterviewAcerModel.FK_InterviewCheckListMapping_GroupCheckList" FromRole="GroupCheckList" ToRole="InterviewCheckListMapping" />
+  </EntityType>
+  <EntityType Name="StageGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StageId" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GroupCheckLists" Relationship="InterviewAcerModel.FK_GroupCheckList_StageGroups" FromRole="StageGroup" ToRole="GroupCheckList" />
+    <NavigationProperty Name="Stage" Relationship="InterviewAcerModel.FK_StageGroups_Stages" FromRole="StageGroup" ToRole="Stage" />
+  </EntityType>
+  <EntityType Name="Stage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewTypeId" Type="Int32" Nullable="false" />
+    <Property Name="StageName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InterviewType" Relationship="InterviewAcerModel.FK_Stages_InterviewTypes" FromRole="Stage" ToRole="InterviewType" />
+    <NavigationProperty Name="StageGroups" Relationship="InterviewAcerModel.FK_StageGroups_Stages" FromRole="Stage" ToRole="StageGroup" />
+  </EntityType>
+  <Association Name="FK_GroupCheckList_StageGroups">
+    <End Type="InterviewAcerModel.StageGroup" Role="StageGroup" Multiplicity="1" />
+    <End Type="InterviewAcerModel.GroupCheckList" Role="GroupCheckList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StageGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupCheckList">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stages_InterviewTypes">
+    <End Type="InterviewAcerModel.InterviewType" Role="InterviewType" Multiplicity="1" />
+    <End Type="InterviewAcerModel.Stage" Role="Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewType">
+        <PropertyRef Name="InterviewTypeId" />
+      </Principal>
+      <Dependent Role="Stage">
+        <PropertyRef Name="InterviewTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StageGroups_Stages">
+    <End Type="InterviewAcerModel.Stage" Role="Stage" Multiplicity="1" />
+    <End Type="InterviewAcerModel.StageGroup" Role="StageGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StageGroup">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetInterviewStage_Result">
+    <Property Type="String" Name="StageName" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="Sequence" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="InterviewCheckListMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewId" Type="Int32" Nullable="false" />
+    <Property Name="CheckListId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GroupCheckList" Relationship="InterviewAcerModel.FK_InterviewCheckListMapping_GroupCheckList" FromRole="InterviewCheckListMapping" ToRole="GroupCheckList" />
+    <NavigationProperty Name="InterviewDetail" Relationship="InterviewAcerModel.FK_InterviewCheckListMapping_InterviewDetails" FromRole="InterviewCheckListMapping" ToRole="InterviewDetail" />
+  </EntityType>
+  <Association Name="FK_InterviewCheckListMapping_GroupCheckList">
+    <End Type="InterviewAcerModel.GroupCheckList" Role="GroupCheckList" Multiplicity="1" />
+    <End Type="InterviewAcerModel.InterviewCheckListMapping" Role="InterviewCheckListMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupCheckList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InterviewCheckListMapping">
+        <PropertyRef Name="CheckListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewCheckListMapping_InterviewDetails">
+    <End Type="InterviewAcerModel.InterviewDetail" Role="InterviewDetail" Multiplicity="1" />
+    <End Type="InterviewAcerModel.InterviewCheckListMapping" Role="InterviewCheckListMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterviewDetail">
+        <PropertyRef Name="InterviewDetailId" />
+      </Principal>
+      <Dependent Role="InterviewCheckListMapping">
+        <PropertyRef Name="InterviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="usp_GetCompletedStages_Result">
+    <Property Type="Int32" Name="StageId" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,28 @@
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.csprojResolveAssemblyReference.cache
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.dll.config
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\EntityFramework.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\EntityFramework.SqlServer.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Common.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Data.dll
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Common.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\InterviewAcer.Data.pdb
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\EntityFramework.xml
+W:\InterviewAcer\InterviewAcer\InterviewAcer.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\obj\Debug\InterviewAcer.Repository.pdb
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.dll.config
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Repository.pdb
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Common.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Data.dll
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Common.pdb
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\InterviewAcer.Data.pdb
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\merged code\interview-acer-webapi\InterviewAcer.Repository\bin\Debug\EntityFramework.SqlServer.xml
