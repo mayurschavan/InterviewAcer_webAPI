@@ -111,5 +111,14 @@ namespace InterviewAcer.Repository.Implementation
                 _dbContext.InterviewCompletedStageMappings.Add(new InterviewCompletedStageMapping() { InterviewId = interviewId, StageId = stageId });
             }
         }
+
+        public void SaveFeedback(int stageId, int interviewId,string feedback)
+        {
+          InterviewCompletedStageMapping interviewFeedback= _dbContext.InterviewCompletedStageMappings.FirstOrDefault(x => x.StageId==stageId && x.InterviewId == interviewId);
+
+            if(interviewFeedback != null)
+            interviewFeedback.FeedBack = feedback;
+
+        }
     }
 }

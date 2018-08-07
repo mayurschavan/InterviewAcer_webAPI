@@ -203,5 +203,28 @@ namespace InterviewAcer.Controllers
                 return InternalServerError(e);
             }
         }
+
+
+        [Authorize]
+        [HttpPost]
+        [Route("api/SaveFeedback")]
+        public async Task<IHttpActionResult> SaveFeedback(FeedbackRequest feedbackRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _unitOfWork.GetInterviewRepository().SaveFeedback(feedbackRequest.StageId, feedbackRequest.InterviewId,feedbackRequest.Feedback);
+                await _unitOfWork.Save();
+                return Ok("Feedback send successfully");
+
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
     }
 }

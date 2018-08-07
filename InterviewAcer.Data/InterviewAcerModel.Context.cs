@@ -47,10 +47,6 @@ public partial class InterviewAcerDbContext : DbContext
 
     public virtual DbSet<Stage> Stages { get; set; }
 
-    public virtual DbSet<InterviewCheckListMapping> InterviewCheckListMappings { get; set; }
-
-    public virtual DbSet<InterviewCompletedStageMapping> InterviewCompletedStageMappings { get; set; }
-
     public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
 
     public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
@@ -60,6 +56,10 @@ public partial class InterviewAcerDbContext : DbContext
     public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
 
     public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+
+    public virtual DbSet<InterviewCheckListMapping> InterviewCheckListMappings { get; set; }
+
+    public virtual DbSet<InterviewCompletedStageMapping> InterviewCompletedStageMappings { get; set; }
 
 
     public virtual ObjectResult<GetInterviewStage_Result> GetInterviewStage(Nullable<int> interviewId)

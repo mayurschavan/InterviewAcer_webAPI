@@ -13,4 +13,15 @@ namespace InterviewAcer.RequestClasses
         [Required]
         public int InterviewId { get; set; }
     }
+
+    public class FeedbackRequest
+    {
+        [Required]
+        public int StageId { get; set; }
+        [Required]
+        public int InterviewId { get; set; }
+
+        [Required]
+        public String Feedback { get; set; }
+    }
 }

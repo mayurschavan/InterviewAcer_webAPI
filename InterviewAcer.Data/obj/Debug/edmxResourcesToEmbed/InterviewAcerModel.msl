@@ -72,26 +72,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="InterviewCheckListMappings">
-      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCheckListMapping">
-        <MappingFragment StoreEntitySet="InterviewCheckListMapping">
-          <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
-          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="usp_GetUserTotalScore" FunctionName="InterviewAcerModel.Store.usp_GetUserTotalScore" />
-    <EntitySetMapping Name="InterviewCompletedStageMappings">
-      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCompletedStageMapping">
-        <MappingFragment StoreEntitySet="InterviewCompletedStageMapping">
-          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
-          <ScalarProperty Name="StageId" ColumnName="StageId" />
-          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="usp_UpdateCheckList" FunctionName="InterviewAcerModel.Store.usp_UpdateCheckList" />
     <EntitySetMapping Name="C__MigrationHistory">
       <EntityTypeMapping TypeName="InterviewAcerModel.C__MigrationHistory">
@@ -163,5 +144,24 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="InterviewCheckListMappings">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCheckListMapping">
+        <MappingFragment StoreEntitySet="InterviewCheckListMapping">
+          <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewCompletedStageMappings">
+      <EntityTypeMapping TypeName="InterviewAcerModel.InterviewCompletedStageMapping">
+        <MappingFragment StoreEntitySet="InterviewCompletedStageMapping">
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="StageId" ColumnName="StageId" />
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
